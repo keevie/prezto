@@ -12,6 +12,8 @@ fi
 
 # Daniel's configs here
 alias aa='cd /home/daniel/appacademy'
+alias y='yaourt'
+alias yu='yaourt -Syu --aur'
 
 export PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
 eval "$(rbenv init - )"
@@ -37,3 +39,5 @@ setopt NUMERIC_GLOB_SORT
 setopt EXTENDED_GLOB
 
 
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path ~/.zsh/cache
