@@ -15,6 +15,9 @@ alias aa='cd /home/daniel/appacademy'
 alias y='yaourt'
 alias yu='yaourt -Syu --aur'
 
+alias attachscreen='xrandr --output LVDS1 --auto --output HDMI1 --auto --left-of LVDS1'
+alias detachscreen='xrandr --output HDMI1 --off'
+
 export PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
 eval "$(rbenv init - )"
 NVM_DIR=$HOME/.nvm
