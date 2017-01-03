@@ -14,6 +14,7 @@ fi
 alias aa='cd /home/daniel/appacademy'
 alias y='yaourt'
 alias yu='yaourt -Syu --aur'
+alias cleanupzip="find . -name '*.DS_Store' -type f -delete && rm -rf __MACOSX"
 
 alias attachscreen='xrandr --output LVDS1 --auto --output HDMI1 --auto --left-of LVDS1'
 alias detachscreen='xrandr --output HDMI1 --off'
