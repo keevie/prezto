@@ -18,6 +18,7 @@ alias y='yaourt'
 alias yu='yaourt -Syu --aur'
 alias cleanupzip="find . -name '*.DS_Store' -type f -delete && rm -rf __MACOSX"
 alias pacclean="sudo pacman -Rns $(pacman -Qtdq)"
+alias be="bundle exec"
 
 alias attachscreen='xrandr --output LVDS1 --auto --output HDMI1 --auto --left-of LVDS1'
 alias detachscreen='xrandr --output HDMI1 --off'
@@ -27,6 +28,16 @@ eval "$(rbenv init - )"
 NVM_DIR=$HOME/.nvm
 source $NVM_DIR/nvm.sh
 
+#vim mode!
+export KEYTIMEOUT=1
+
+bindkey -v
+bindkey '^P' up-history
+bindkey '^N' down-history
+bindkey '^?' backward-delete-char
+bindkey '^h' backward-delete-char
+bindkey '^w' backward-kill-word
+bindkey '^r' history-incremental-search-backward
 
 # if we have a glob this will expand it
 setopt GLOB_COMPLETE
