@@ -14,20 +14,23 @@ fi
 #make control s freeze the terminal
 stty start undef stop undef
 alias aa='cd /home/daniel/appacademy'
-alias y='yaourt'
-alias yu='yaourt -Syu --aur'
+alias yu='pacaur -Syu'
 alias cleanupzip="find . -name '*.DS_Store' -type f -delete && rm -rf __MACOSX"
 alias pacclean="sudo pacman -Rns $(pacman -Qtdq)"
 alias be="bundle exec"
 alias vim="nvim"
+alias key="setxkbmap -option caps:escape"
+alias weather='curl wttr.in'
 
-alias attachscreen='xrandr --output LVDS1 --auto --output HDMI1 --auto --left-of LVDS1'
-alias detachscreen='xrandr --output HDMI1 --off'
+alias attachscreen='xrandr --output eDP1 --auto --output DP1 --auto --left-of eDP1 -r 60'
+alias attachscreenrotated='xrandr --output eDP1 --auto --output DP1 --auto --left-of eDP1 --rotate left'
+alias detachscreen='xrandr --output DP1 --off'
 
 export PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
+export PATH="/home/daniel/.local/bin:$PATH"
 eval "$(rbenv init - )"
-NVM_DIR=$HOME/.nvm
-source $NVM_DIR/nvm.sh
+# NVM_DIR=$HOME/.nvm
+# source $NVM_DIR/nvm.sh
 
 #vim mode!
 export KEYTIMEOUT=1
@@ -57,6 +60,10 @@ setopt NUMERIC_GLOB_SORT
 # I don't know why I never set this before.
 setopt EXTENDED_GLOB
 
+BASE16_SHELL=$HOME/.config/base16-shell/
+[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
+
 
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.zsh/cache
+source /usr/share/nvm/init-nvm.sh
