@@ -23,12 +23,16 @@ alias key="setxkbmap -option caps:escape"
 alias weather='curl wttr.in'
 
 alias attachscreen='xrandr --output eDP1 --auto --output DP1 --auto --left-of eDP1 -r 60'
+alias attachscreenhdmi='xrandr --output eDP1 --auto --output HDMI2 --auto --left-of eDP1 -r 60'
 alias attachscreenrotated='xrandr --output eDP1 --auto --output DP1 --auto --left-of eDP1 --rotate left'
 alias detachscreen='xrandr --output DP1 --off'
+alias detachscreenhdmi='xrandr --output HDMI2 --off'
+alias gbr='for branch in `git branch -r | grep -v HEAD`;do echo -e `git show --format="%ci %cr" $branch | head -n 1` \\t$branch; done | sort'
 
 export PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
 export PATH="/home/daniel/.local/bin:$PATH"
 eval "$(rbenv init - )"
+eval "$(thefuck --alias)"
 # NVM_DIR=$HOME/.nvm
 # source $NVM_DIR/nvm.sh
 
