@@ -28,6 +28,11 @@ alias attachscreenrotated='xrandr --output eDP1 --auto --output DP1 --auto --lef
 alias detachscreen='xrandr --output DP1 --off'
 alias detachscreenhdmi='xrandr --output HDMI2 --off'
 alias gbr='for branch in `git branch -r | grep -v HEAD`;do echo -e `git show --format="%ci %cr" $branch | head -n 1` \\t$branch; done | sort'
+alias stagingdb='/home/daniel/kingfisher-database/staging.sh'
+alias sandboxdb='/home/daniel/kingfisher-database/sandbox.sh'
+alias devdb='/home/daniel/kingfisher-database/dev.sh'
+alias proddb='/home/daniel/kingfisher-database/prod.sh'
+alias k='cd ~/metamap/kingfisher-www'
 
 export PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
 export PATH="/home/daniel/.local/bin:$PATH"
